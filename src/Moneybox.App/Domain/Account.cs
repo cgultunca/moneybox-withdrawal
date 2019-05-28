@@ -26,7 +26,6 @@ namespace Moneybox.App
                 throw new InvalidOperationException("Insufficient funds to make transfer");
             }
 
-           
             return true;
         }
 
@@ -38,9 +37,7 @@ namespace Moneybox.App
                 throw new InvalidOperationException("Account pay in limit reached");
             }
 
-           
             return true;
-
         }
 
         public void WithdrawnMoney(decimal amount, INotificationService notificationService)
@@ -52,7 +49,6 @@ namespace Moneybox.App
             {
                 notificationService.NotifyFundsLow(User.Email);
             }
-
         }
 
 
@@ -65,10 +61,6 @@ namespace Moneybox.App
             {
                 notificationService.NotifyApproachingPayInLimit(User.Email);
             }
-
-
         }
-
-
     }
 }

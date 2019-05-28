@@ -6,8 +6,8 @@ namespace Moneybox.App.Features
 {
     public class WithdrawMoney
     {
-        private IAccountRepository accountRepository;
-        private INotificationService notificationService;
+        private readonly IAccountRepository accountRepository;
+        private readonly INotificationService notificationService;
 
         public WithdrawMoney(IAccountRepository accountRepository, INotificationService notificationService)
         {
@@ -17,15 +17,15 @@ namespace Moneybox.App.Features
 
         public void Execute(Guid fromAccountId, decimal amount)
         {
-            var from = this.accountRepository.GetAccountById(fromAccountId);
+            var from = accountRepository.GetAccountById(fromAccountId);
 
-            //witdhdrawn Check
+            //withdrawn Availability Check
             bool IsFromAccountAvailableForWithdrawn = from.CheckWithdrawnAvailability(amount);
 
             if (IsFromAccountAvailableForWithdrawn)
             {
                 from.WithdrawnMoney(amount,notificationService);
-                this.accountRepository.Update(from);
+                accountRepository.Update(from);
             }
 
         }
