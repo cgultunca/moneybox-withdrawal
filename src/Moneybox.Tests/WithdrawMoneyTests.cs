@@ -47,7 +47,7 @@ namespace Moneybox.Tests
         }
 
         [Test]
-        public void TransferRequestSuccesfullyEnded()
+        public void WithdrawRequestSuccesfullyEnded()
         {
             _withdrawMoney.Execute(fromAccountId, 2500);
             Assert.AreEqual(from.Balance, 3500);
@@ -55,7 +55,7 @@ namespace Moneybox.Tests
         }
 
         [Test]
-        public void TransferRequestSuccesfully_ButNotifyFundsLowToFromAccount()
+        public void WithdrawRequestSuccesfully_ButNotifyFundsLowToFromAccount()
         {
             from.Balance = 2750;
             _withdrawMoney.Execute(fromAccountId, 2500);
