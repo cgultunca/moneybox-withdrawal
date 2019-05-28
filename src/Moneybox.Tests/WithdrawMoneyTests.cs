@@ -38,7 +38,7 @@ namespace Moneybox.Tests
 
 
         [Test]
-        public void WithdrawMoneyExecuteThrowsError_InsufficientFundsToMakeTransfer()
+        public void WithdrawMoneyExecuteThrowsError_InsufficientFunds()
         {
             Assert.Throws<InvalidOperationException>(() =>
             {
