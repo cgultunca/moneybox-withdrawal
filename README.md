@@ -24,3 +24,14 @@ As part of this process however, you should look to refactor some of the code in
 Once you have completed your work, send us a link to your public repository.
 
 Good luck!
+
+---------------------
+
+************** 
+## Refactoring
+
+* Withdraw and Transfer functionality transfered to Account.cs
+* Added Availability Check functionality before transfer / withdrawn process
+* WithdrawMoney Execute method Added
+* Test project added
+* Transfer money and withdrawn money test scenarios added
