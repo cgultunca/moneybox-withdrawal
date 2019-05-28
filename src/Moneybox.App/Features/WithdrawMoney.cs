@@ -17,7 +17,17 @@ namespace Moneybox.App.Features
 
         public void Execute(Guid fromAccountId, decimal amount)
         {
-            // TODO:
+            var from = this.accountRepository.GetAccountById(fromAccountId);
+
+            //witdhdrawn Check
+            bool IsFromAccountAvailableForWithdrawn = from.CheckWithdrawnAvailability(amount);
+
+            if (IsFromAccountAvailableForWithdrawn)
+            {
+                from.WithdrawnMoney(amount,notificationService);
+                this.accountRepository.Update(from);
+            }
+
         }
     }
 }
