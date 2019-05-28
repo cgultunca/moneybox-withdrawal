@@ -8,7 +8,7 @@ using NUnit.Framework;
 
 namespace Moneybox.Tests
 {
-    public class WitdhdrawMoneyTests
+    public class WithdrawMoneyTests
     {
         private readonly Guid fromAccountId = Guid.NewGuid();
         private const string FromUserEmail = "from@moneybox.com";
